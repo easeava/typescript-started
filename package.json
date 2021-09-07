@@ -1,0 +1,46 @@
+{
+  "name": "ease-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "easeava@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn clean && babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored --source-maps inline",
+    "dev": "yarn start:dev",
+    "start": "yarn build && node dist/bin/server.js",
+    "start:dev": "ts-node-dev -r tsconfig-paths/register --files --respawn --ignore-watch node_modules ./src/index.ts",
+    "clean": "rimraf dist",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write --loglevel silent \"./src/**/*.{json,js,ts}\"",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-typescript": "^7.15.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-typescript-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "jest": "^27.1.0",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.11.0"
+  },
+  "dependencies": {
+    "@types/jest": "^27.0.1",
+    "core-js": "^3.17.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.2"
+  }
+}
