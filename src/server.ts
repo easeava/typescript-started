@@ -14,8 +14,10 @@ class App {
     return 'hello';
   }
 
-  static test = (): string => {
-    return 'test';
+  static test = (): Test => {
+    return {
+      msg: 'test info',
+    };
   };
 }
 
